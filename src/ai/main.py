@@ -1,5 +1,5 @@
 import imageTaker as iT
-import ai.oldmobileModel as mM
+import mobileModel as mM
 
 def main():
 
