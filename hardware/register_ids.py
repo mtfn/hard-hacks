@@ -23,4 +23,4 @@ except KeyboardInterrupt:
     with open('uid.csv', 'w') as csvfile:
         writer = csv.DictWriter(csvfile, fieldnames=['name', 'uid'])
         writer.writeheader()
-        writer.writerows(cars)
+        writer.writerows(uid)
