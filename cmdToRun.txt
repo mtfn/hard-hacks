@@ -1,0 +1,2 @@
+windows command:
+python ./src/ai/main.py -t C:\Users\prana\appdata\local\programs\python\python39\scripts\pytesseract.exe -v 1 -s 2
