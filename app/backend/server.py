@@ -24,7 +24,24 @@ def upload_image():
     with open(image_path, 'wb') as f:
         f.write(image_data)
 
-    return f'Image uploaded successfully to {image_path}', 200
+    # call command line ffmpeg shrink image down by 4
+    os.system(f'ffmpeg -i {image_path} -vf scale=iw/4:-1 {image_path}')
+
+    return {'cat': 'recycle'}, 200
+
+ids = {
+        1: 'Matt',
+        2: 'Harsha',
+        3: 'Gowtham'
+}
+
+@app.route('/id_card', methods=['POST'])
+def id_card():
+    # get id number from json body
+    id_number = int(request.json.get('id'))
+
+    # respond with user email
+    return {'name': ids[id_number]}, 200
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <h1>Thanks!<h1>
-            <p>Your account has been credited.</p>
+        <h1 class="dm-sans head">Done!<h1>
+            <h2 class="dm-sans">Your account has been credited.<br><br>
+                Thanks for making the world a greener place,<br>one toss at a time.
+            </h2>
 
-            <p>Current balance: <span id="bal"></span></p>
+            <script>
+                setTimeout(() => {window.location.replace('./index.html')}, 3000)
+            </script>
+
     </body>
 </html>

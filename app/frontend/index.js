@@ -1,6 +1,6 @@
-document.getElementById('submit').onclick = () => {
+/*document.getElementById('submit').onclick = () => {
     window.location.replace('./id.html')
-}
+}*/
 
 //Selector for your <video> element
 const video = document.querySelector('#myVidPlayer');
@@ -29,5 +29,17 @@ function takeASnap(){
 }       
 
 function download(blob){
-    fetch("http://localhost:5000/upload", { method: 'POST', body: blob });
+    fetch("http://localhost:5000/upload", { method: 'POST', body: blob })
+        .then(res=>res.json()).then(res=>{
+        idTrash(res.cat)
+    })
 };
+
+function idTrash(receptacle) {
+    video.pause(); 
+    const subh = document.getElementById('prompt')
+    subh.innerHTML = 'I think this should be in the ' + receptacle
+    setTimeout(() => {
+        window.location.replace('./id.html')
+    }, 3000)
+}

@@ -1,4 +1,40 @@
 body {
-    font-family: sans-serif;
+    color: white;
     text-align: center;
+    background-image: linear-gradient(to right, lime , green);
+}
+
+.head {
+    font-size: 10em;
+    margin-bottom: 0.05em;
+    padding-botom: 0;
+}
+
+h2 {
+    font-size: 4em;
+    margin-top: 0.05em;
+}
+
+.dm-sans {
+  font-family: "DM Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+video {
+    border-radius: 2em;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   15% { transform: rotate(15deg); }
+   30% { transform: rotate(-15deg); }
+   45% { transform: rotate(0deg);   }
+  100% { transform: rotate(0deg); }
+}
+
+h1.wiggle {
+  display: inline-block;
+  animation: wiggle 2.5s infinite;
 }

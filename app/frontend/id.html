@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+
     </head>
     <body>
-        <h1>Tap your ID against the sensor:</h1>
+        <h1 class="dm-sans head">ID, please?</h1> 
+        <h2 class="dm-sans">Tap your student ID below</h1>
+
+        <h1 id="downarrow" class="head wiggle">⬇️</h1>
+
+        <script>
+            next = () => {
+                da = document.getElementById('downarrow')
+                da.classList.remove('wiggle')
+                da.innerHTML = '✅'
+
+                fetch('http://localhost:5000', {
+                    body: JSON.stringify({id: 1}),
+                    method: 'POST'
+                }).then(resp => {
+                        setTimeout(() => {
+                            window.location.replace('./done.html')
+                        }, 1000)
+                    
+                })
+
+
+            } 
+        </script>
     </body>
 </html>
