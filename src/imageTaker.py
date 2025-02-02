@@ -1,8 +1,8 @@
 import cv2
 import time
 
-# cam = cv2.VideoCapture(1)
-cam = cv2.VideoCapture(0, cv2.CAP_V4L2)
+cam = cv2.VideoCapture(1)
+# cam = cv2.VideoCapture(0, cv2.CAP_V4L2)
 
 def take():
 	while True:
