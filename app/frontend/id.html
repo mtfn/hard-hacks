@@ -13,6 +13,7 @@
 
         <h1 id="downarrow" class="head wiggle">⬇️</h1>
 
+        <script src="https://cdn.socket.io/4.8.1/socket.io.min.js" integrity="sha384-mkQ3/7FUtcGyoppY6bz/PORYoGqOl7/aSUMn2ymDOJcapfS6PHqxhRTMh1RR0Q6+" crossorigin="anonymous"></script>
         <script>
             next = () => {
                 da = document.getElementById('downarrow')
@@ -33,15 +34,15 @@
             } 
 
             // Establishing connection with the server hosted at domain:port
-            var socket = io.connect('http://domain:port');
+            var socket = io.connect('ws://localhost:8080');
             // Listening for event named `any event`
-            socket.on('idScanned', (msg) => {
+            socket.on('idScanned', (name) => {
                 da = document.getElementById('downarrow')
                 da.classList.remove('wiggle')
                 da.innerHTML = '✅'
                 
                 setTimeout(() => {
-                    window.location.replace(`./done.html?name=${msg.name}}`)
+                    window.location.replace(`./done.html?name=${name}`)
                 }, 1000)
             });
         </script>

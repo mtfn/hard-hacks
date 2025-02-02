@@ -3,7 +3,7 @@
 }*/
 
 //Selector for your <video> element
-import { io } from "https://cdn.socket.io/4.8.1/socket.io.esm.min.js";
+// import { io } from "https://cdn.socket.io/4.8.1/socket.io.esm.min.js";
 
 const video = document.querySelector('#myVidPlayer');
 
@@ -50,6 +50,6 @@ function idTrash(receptacle) {
 }
 
 // Establishing connection with the server hosted at domain:port
-var socket = io.connect('http://domain:port');
+var socket = io.connect('http://localhost:8080');
 // Listening for event named `any event`
 socket.on('predictionMade', idTrash);
