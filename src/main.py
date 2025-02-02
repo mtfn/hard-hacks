@@ -1,10 +1,10 @@
 import imageTaker as iT
-# import mobileModel as mM
+import mobileModel as mM
 
 def main():
 
     iT.take()
-    # mM.main()
+    mM.main()
 
 
 if __name__ == "__main__":
