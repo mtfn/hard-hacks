@@ -3,6 +3,8 @@
 }*/
 
 //Selector for your <video> element
+import { io } from "https://cdn.socket.io/4.8.1/socket.io.esm.min.js";
+
 const video = document.querySelector('#myVidPlayer');
 
 //Core
@@ -35,11 +37,19 @@ function download(blob){
     })
 };
 
+// Pauses the live feed, shows the prediction if item should be in trash or recycling, then advances to ID scanning
 function idTrash(receptacle) {
     video.pause(); 
-    const subh = document.getElementById('prompt')
-    subh.innerHTML = 'I think this should be in the ' + receptacle
+    const subh = document.getElementById('prompt');
+    subh.innerHTML = 'I think this should be in the ' + receptacle;
+    
+    // Advance to id scanning page after 3 seconds
     setTimeout(() => {
         window.location.replace('./id.html')
     }, 3000)
 }
+
+// Establishing connection with the server hosted at domain:port
+var socket = io.connect('http://domain:port');
+// Listening for event named `any event`
+socket.on('predictionMade', idTrash);

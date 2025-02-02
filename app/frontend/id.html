@@ -31,6 +31,19 @@
 
 
             } 
+
+            // Establishing connection with the server hosted at domain:port
+            var socket = io.connect('http://domain:port');
+            // Listening for event named `any event`
+            socket.on('idScanned', (msg) => {
+                da = document.getElementById('downarrow')
+                da.classList.remove('wiggle')
+                da.innerHTML = '✅'
+                
+                setTimeout(() => {
+                    window.location.replace(`./done.html?name=${msg.name}}`)
+                }, 1000)
+            });
         </script>
     </body>
 </html>
