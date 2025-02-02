@@ -32,7 +32,7 @@ def index():
 @socketio.on('connect')
 def test_connect():
     #    emit('idScanned',  {'data':'Lets dance'})
-    
+    print("con") 
     id, text = rdr.read()
 
     print(id)
@@ -40,6 +40,7 @@ def test_connect():
     emit('idScanned', uid[str(id)]) 
     
     print("test")
+
 
 
 @socketio.on('Slider value changed')

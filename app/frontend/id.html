@@ -40,6 +40,7 @@
                 da = document.getElementById('downarrow')
                 da.classList.remove('wiggle')
                 da.innerHTML = '✅'
+		//websocket.close()
                 
                 setTimeout(() => {
                     window.location.replace(`./done.html?name=${name}`)
