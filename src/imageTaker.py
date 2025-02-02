@@ -23,7 +23,7 @@ def take():
 		if k != -1:
 			break
 	cv2.imwrite('./images/big.jpg', image)
-	time.sleep(2)
-	cv2.imwrite('./images/big2.jpg', image)
+	# time.sleep(2)
+	# cv2.imwrite('./images/big2.jpg', image)
 	cam.release()
 	cv2.destroyAllWindows()
