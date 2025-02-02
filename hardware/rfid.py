@@ -1,18 +1,10 @@
 from time import sleep
-from mfrc522 import SimpleMFRC522 as mfr
+from mfrc522 impoort SimpleMFRC522 as mfr
+import json 
 
-def return_uid():
-    rdr = mfr()
+reader = mfr()
 
-    try:
-        while True:
-            print("waiting")
+uid = {}
 
-            id, text = reader.read()
-
-            print(id)
-
-            return id
-
-        except KeyboardInterrupt:
-            return None
+with open('uid.json', 'r') as f:
+    uid = json.load(
